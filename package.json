@@ -1,0 +1,30 @@
+{
+  "name": "gh-pages-deploy-action",
+  "version": "0.0.1",
+  "description": "GitHub Action to build and deploy a Github Pages site using the build command & output folder you specify.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sterlingwes/gh-pages-deploy-action.git"
+  },
+  "keywords": [
+    "Gatsby",
+    "GitHub Pages",
+    "GitHub Actions"
+  ],
+  "author": "Enrique Gonzalez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sterlingwes/gh-pages-deploy-action/issues"
+  },
+  "homepage": "https://github.com/sterlingwes/gh-pages-deploy-action#readme",
+  "dependencies": {
+    "@actions/core": "^1.1.0",
+    "@actions/exec": "^1.0.1",
+    "@actions/github": "^1.1.0",
+    "@actions/io": "^1.0.1"
+  }
+}

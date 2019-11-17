@@ -1,0 +1,28 @@
+name: 'Github Pages Deploy'
+description: 'Build and deploy a Github Pages site using the build command & output folder you specify.'
+branding:
+  icon: 'upload-cloud'
+  color: 'green'
+inputs:
+  access-token:
+    description: 'A personal access token needed to push your site after it has been built.'
+    required: true
+  source-directory:
+    description: 'The subdirectory that your build command outputs your site assets to.'
+    required: true
+    default: ''
+  build-command:
+    description: 'The build command that should be run to generate your site.'
+    required: true
+    default: ''
+  deploy-branch:
+    description: 'The branch expected by GitHub to have the static files needed for your site.'
+    required: false
+    default: 'gh-pages'
+  custom-domain:
+    description: 'The custom domain you want your Github Pages site to be served from.'
+    required: false
+    default: ''
+runs:
+  using: 'node12'
+  main: 'index.js'
