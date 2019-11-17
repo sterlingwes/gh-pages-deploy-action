@@ -1,4 +1,4 @@
-# Github Pages Deploy
+# Github Pages Custom Deploy
 
 GitHub Action to build and deploy a Github Pages site using the build command & output folder you specify.
 

@@ -1,6 +1,6 @@
 {
   "name": "gh-pages-deploy-action",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "GitHub Action to build and deploy a Github Pages site using the build command & output folder you specify.",
   "main": "index.js",
   "scripts": {
