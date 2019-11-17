@@ -4,18 +4,20 @@
   "description": "GitHub Action to build and deploy a Github Pages site using the build command & output folder you specify.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "ncc build index.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sterlingwes/gh-pages-deploy-action.git"
   },
   "keywords": [
-    "Gatsby",
     "GitHub Pages",
-    "GitHub Actions"
+    "GitHub Actions",
+    "Build",
+    "Deploy"
   ],
-  "author": "Enrique Gonzalez",
+  "author": "Wes Johnson",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/sterlingwes/gh-pages-deploy-action/issues"
@@ -26,5 +28,8 @@
     "@actions/exec": "^1.0.1",
     "@actions/github": "^1.1.0",
     "@actions/io": "^1.0.1"
+  },
+  "devDependencies": {
+    "@zeit/ncc": "^0.20.5"
   }
 }

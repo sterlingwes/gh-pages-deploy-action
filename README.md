@@ -8,6 +8,8 @@ This GitHub Action will run the build command you specify at the root of your re
 deploy it to GitHub Pages for you! Here's a basic workflow example:
 
 ```yml
+# .github/workflows/main.yml
+
 name: Github Pages Publish
 
 on:
