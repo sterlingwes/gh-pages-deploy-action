@@ -63,6 +63,16 @@ async function run() {
     const repoURL = `https://${accessToken}@github.com/${repo}.git`;
     console.log(`Deploying to repo: ${repo} and branch: ${deployBranch}`);
 
+    const sizeCallOptions = {};
+    let sizeOut = '';
+    sizeCallOptions.listeners = {
+      stdout: (data) => {
+        sizeOut += data.toString();
+      },
+    };
+    await exec.exec(`du`, ['-sh', sourceDirectory], sizeCallOptions);
+    console.log('deploy size:', sizeOut.split('\t')[0]);
+
     const cwd = `./${sourceDirectory}`;
     await exec.exec(`git init`, [], { cwd });
     await exec.exec(`git config user.name`, [github.context.actor], { cwd });
