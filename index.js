@@ -30,7 +30,10 @@ async function run() {
       return;
     }
 
-    const pkgManager = (await ioUtil.exists('./yarn.lock')) ? 'yarn' : 'npm';
+    let pkgManager = (await ioUtil.exists('./yarn.lock')) ? 'yarn' : 'npm';
+    if (pkgManager === 'npm' && (await ioUtil.exists('./bun.lockb'))) {
+      pkgManager = 'bun';
+    }
     console.log(`Installing your site's dependencies using ${pkgManager}.`);
     await exec.exec(`${pkgManager} install`);
     console.log('Finished installing dependencies.');
