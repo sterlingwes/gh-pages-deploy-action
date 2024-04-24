@@ -30,13 +30,16 @@ async function run() {
       return;
     }
 
-    let pkgManager = (await ioUtil.exists('./yarn.lock')) ? 'yarn' : 'npm';
-    if (pkgManager === 'npm' && (await ioUtil.exists('./bun.lockb'))) {
-      pkgManager = 'bun';
+    const autoInstallInput = core.getInput('auto-install');
+    const autoInstall = autoInstallInput === 'true' || autoInstallInput === 'yes';
+    if (autoInstall) {
+      const pkgManager = (await ioUtil.exists('./yarn.lock')) ? 'yarn' : 'npm';
+      console.log(`Installing your site's dependencies using ${pkgManager}.`);
+      await exec.exec(`${pkgManager} install`);
+      console.log('Finished installing dependencies.');
+    } else {
+      console.log('Skipping dependency installation (auto-install is disabled).');
     }
-    console.log(`Installing your site's dependencies using ${pkgManager}.`);
-    await exec.exec(`${pkgManager} install`);
-    console.log('Finished installing dependencies.');
 
     const buildCommand = core.getInput('build-command');
     if (!buildCommand) {

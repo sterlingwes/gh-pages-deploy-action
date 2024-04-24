@@ -23,6 +23,10 @@ inputs:
     description: 'The custom domain you want your Github Pages site to be served from.'
     required: false
     default: ''
+  auto-install:
+    description: 'Whether to automatically install dependencies before running the build command.'
+    required: false
+    default: 'yes'
 runs:
   using: 'node12'
   main: 'dist/index.js'
